@@ -1,18 +1,24 @@
-package Locomotive;
+package com.epam.locomotive;
 
-public abstract class Locomotive {
+public class locomotive {
     private int maxCarriageCount;
     private int enginePower;
     private int maxSpeed;
+    private typeLocomotive type;
 
-    public Locomotive(){
-
+    public locomotive(typeLocomotive type, int maxCarriageCount, int enginePower, int maxSpeed) {
+        this.type = type;
+        this.setEnginePower(enginePower);
+        this.setMaxCarriageCount(maxCarriageCount);
+        this.setMaxSpeed(maxSpeed);
     }
 
-    public Locomotive(int maxCarriageCount, int enginePower, int maxSpeed) {
-        this.maxCarriageCount = maxCarriageCount;
-        this.enginePower = enginePower;
-        this.maxSpeed = maxSpeed;
+    public typeLocomotive getType() {
+        return type;
+    }
+
+    public void setType(typeLocomotive type) {
+        this.type = type;
     }
 
     public int getMaxCarriageCount() {
@@ -20,6 +26,7 @@ public abstract class Locomotive {
     }
 
     public void setMaxCarriageCount(int maxCarriageCount) {
+
         this.maxCarriageCount = maxCarriageCount;
     }
 
@@ -28,10 +35,12 @@ public abstract class Locomotive {
     }
 
     public void setEnginePower(int enginePower) {
+
         this.enginePower = enginePower;
     }
 
     public int getMaxSpeed() {
+
         return maxSpeed;
     }
 
