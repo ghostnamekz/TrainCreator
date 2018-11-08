@@ -16,13 +16,23 @@ public class passengerTrain extends train {
     }
 
     public void addCarriages(railwayCarriage carriage) {
-        if (carriage.getType() == typeOfCarriage.lUXE_CLASS || carriage.getType() == typeOfCarriage.FIRST_CLASS || carriage.getType() == typeOfCarriage.SECOND_CLASS
-                || carriage.getType() == typeOfCarriage.RESTAURANT || carriage.getType() == typeOfCarriage.POST) {
+        if ((carriage.getType() == typeOfCarriage.lUXE_CLASS || carriage.getType() == typeOfCarriage.FIRST_CLASS ||
+                carriage.getType() == typeOfCarriage.SECOND_CLASS || carriage.getType() == typeOfCarriage.RESTAURANT ||
+                carriage.getType() == typeOfCarriage.POST) && (getTrainSize() < getlocomotiveMaxCountCarriage())) {
             this.getTrain().add(carriage);
         } else {
-            throw new IllegalArgumentException("Wrong type for PassangersCarriage");
+            throw new IllegalArgumentException("Please, check type of carriages and " +
+                    "count carriages in train ant try again...");
         }
     }
+
+   /* public String toString() {
+        return "Train{" +
+                "locomotive=" + getLocomotive().getType() +
+                ", wagons=" + this.getlocomotiveMaxCountCarriage() +
+                "typeWagons"+ this.getTrain()+
+                '}';
+    }*/
 
     @Override
     public int getMaxLengthInCarriage() {

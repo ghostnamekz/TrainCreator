@@ -16,11 +16,13 @@ public class freightedTrain extends train {
     }
 
     public void addCarriages(railwayCarriage carriage) {
-        if (carriage.getType() == typeOfCarriage.OPEN || carriage.getType() == typeOfCarriage.HOPPER || carriage.getType() == typeOfCarriage.TANK
-                || carriage.getType() == typeOfCarriage.PLATFORM || carriage.getType() == typeOfCarriage.COVERED) {
+        if (carriage.getType() == typeOfCarriage.OPEN || carriage.getType() == typeOfCarriage.HOPPER ||
+                carriage.getType() == typeOfCarriage.TANK || carriage.getType() == typeOfCarriage.PLATFORM ||
+                carriage.getType() == typeOfCarriage.COVERED && (getTrainSize() < getlocomotiveMaxCountCarriage())) {
             this.getTrain().add(carriage);
         } else {
-            throw new IllegalArgumentException("Wrong type for FreightedCarriage");
+            throw new IllegalArgumentException("Please, check type of carriages " +
+                    "and count carriages in train ant try again...");
         }
     }
 
@@ -29,7 +31,3 @@ public class freightedTrain extends train {
         return super.getMaxLengthInCarriage();
     }
 }
-
-
-
-
