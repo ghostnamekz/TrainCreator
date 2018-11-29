@@ -1,16 +1,17 @@
 package com.epam.train;
 
-import com.epam.railwayCarriage.railwayCarriage;
+import com.epam.railwayCarriage.RailwayCarriage;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class train {
+public abstract class Train {
     private int maxLengthInCarriage;
     private com.epam.locomotive.locomotive locomotive;
-    private List<railwayCarriage> train = new ArrayList<>();
-    private railwayCarriage railwayCarriage;
+    private List<RailwayCarriage> train = new ArrayList<>();
+    private RailwayCarriage RailwayCarriage;
 
-    public train() {
+    public Train() {
     }
 
     public int getlocomotiveMaxCountCarriage() {
@@ -32,11 +33,11 @@ public abstract class train {
         this.maxLengthInCarriage = maxLengthInCarriage;
     }
 
-    public List<railwayCarriage> getTrain() {
+    public List<RailwayCarriage> getTrain() {
         return train;
     }
 
-    public void setTrain(List<railwayCarriage> train) {
+    public void setTrain(List<RailwayCarriage> train) {
         this.train = train;
     }
 
@@ -49,11 +50,12 @@ public abstract class train {
         this.locomotive = locomotive;
     }
 
-    public com.epam.railwayCarriage.railwayCarriage getRailwayCarriage() {
-        return railwayCarriage;
+
+    public RailwayCarriage getRailwayCarriage() {
+        return RailwayCarriage;
     }
 
-    public void setRailwayCarriage(com.epam.railwayCarriage.railwayCarriage railwayCarriage) {
-        this.railwayCarriage = railwayCarriage;
+    public void setRailwayCarriage(RailwayCarriage RailwayCarriage) {
+        this.RailwayCarriage = RailwayCarriage;
     }
 }

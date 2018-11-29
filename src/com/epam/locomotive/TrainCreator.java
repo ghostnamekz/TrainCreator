@@ -1,19 +1,19 @@
 package com.epam.locomotive;
 
-import com.epam.railwayCarriage.railwayCarriage;
-import com.epam.railwayCarriage.typeOfCarriage;
-import com.epam.train.freightedTrain;
-import com.epam.train.passengerTrain;
+import com.epam.railwayCarriage.RailwayCarriage;
+import com.epam.railwayCarriage.TypeOfCarriage;
+import com.epam.train.FreightedTrain;
+import com.epam.train.PassengerTrain;
 
-public class Main {
+public class TrainCreator {
     public static void main(String[] args) {
 
-        passengerTrain passengerTrain1 = new passengerTrain();
-        freightedTrain freightedTrain1 = new freightedTrain();
+        PassengerTrain passengerTrain1 = new PassengerTrain();
+        FreightedTrain freightedTrain1 = new FreightedTrain();
 
-        locomotive locomotive1 = new locomotive(typeLocomotive.PASSENGERS_LOCOMOTIVE, 60,
+        locomotive locomotive1 = new locomotive(TypeLocomotive.PASSENGERS_LOCOMOTIVE, 60,
                 850, 90);
-        locomotive locomotive2 = new locomotive(typeLocomotive.FREIGHT_LOCOMOTIVE, 50,
+        locomotive locomotive2 = new locomotive(TypeLocomotive.FREIGHT_LOCOMOTIVE, 50,
                 1000, 90);
         passengerTrain1.addLocomotiv(locomotive1);
         freightedTrain1.addLocomotiv(locomotive2);
@@ -21,29 +21,29 @@ public class Main {
         passengerTrain1.addLocomotiv(locomotive1);
         freightedTrain1.addLocomotiv(locomotive2);
 
-        railwayCarriage passengerCarriage1 = new railwayCarriage(1, typeOfCarriage.lUXE_CLASS, 12,
+        RailwayCarriage passengerCarriage1 = new RailwayCarriage(1, TypeOfCarriage.lUXE_CLASS, 12,
                 2, 30);
         passengerTrain1.addCarriages(passengerCarriage1);
-        railwayCarriage passengerCarriage2 = new railwayCarriage(2, typeOfCarriage.FIRST_CLASS, 12,
+        RailwayCarriage passengerCarriage2 = new RailwayCarriage(2, TypeOfCarriage.FIRST_CLASS, 12,
                 2, 20);
         passengerTrain1.addCarriages(passengerCarriage2);
-        railwayCarriage passengerCarriage3 = new railwayCarriage(3, typeOfCarriage.SECOND_CLASS, 12,
+        RailwayCarriage passengerCarriage3 = new RailwayCarriage(3, TypeOfCarriage.SECOND_CLASS, 12,
                 2, 20);
         passengerTrain1.addCarriages(passengerCarriage3);
-        railwayCarriage passengerCarriage4 = new railwayCarriage(4, typeOfCarriage.RESTAURANT, 12,
+        RailwayCarriage passengerCarriage4 = new RailwayCarriage(4, TypeOfCarriage.RESTAURANT, 12,
                 2, 20);
         passengerTrain1.addCarriages(passengerCarriage4);
-        railwayCarriage passengerCarriage5 = new railwayCarriage(5, typeOfCarriage.POST, 12, 2,
+        RailwayCarriage passengerCarriage5 = new RailwayCarriage(5, TypeOfCarriage.POST, 12, 2,
                 20);
         passengerTrain1.addCarriages(passengerCarriage5);
 
-        railwayCarriage freightCarriage1 = new railwayCarriage(1, typeOfCarriage.OPEN, 2, 40,
+        RailwayCarriage freightCarriage1 = new RailwayCarriage(1, TypeOfCarriage.OPEN, 2, 40,
                 60);
         freightedTrain1.addCarriages(freightCarriage1);
-        railwayCarriage freightCarriage2 = new railwayCarriage(2, typeOfCarriage.HOPPER, 12, 3,
+        RailwayCarriage freightCarriage2 = new RailwayCarriage(2, TypeOfCarriage.HOPPER, 12, 3,
                 50);
         freightedTrain1.addCarriages(freightCarriage2);
-        railwayCarriage freightCarriage3 = new railwayCarriage(3, typeOfCarriage.TANK, 12, 3,
+        RailwayCarriage freightCarriage3 = new RailwayCarriage(3, TypeOfCarriage.TANK, 12, 3,
                 60);
         freightedTrain1.addCarriages(freightCarriage3);
 
@@ -53,10 +53,8 @@ public class Main {
                 " carrieges: " + passengerCarriage1.getType() + ", " + passengerCarriage2.getType() + ", " +
                 passengerCarriage3.getType() + ", " + passengerCarriage4.getType() + ", " +
                 passengerCarriage5.getType());
-
         System.out.println("Freights train consists of: locomotive - " + freightedTrain1.getLocomotive().getType() +
                 " and " + freightedTrain1.getTrain().size() + " carrieges: " + freightCarriage1.getType() + ", "
                 + freightCarriage2.getType() + ", " + freightCarriage3.getType());
     }
-
 }

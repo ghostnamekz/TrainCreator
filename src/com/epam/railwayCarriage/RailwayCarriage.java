@@ -1,13 +1,13 @@
 package com.epam.railwayCarriage;
 
-public class railwayCarriage {
+public class RailwayCarriage {
     private float length;
     private float width;
     private float weight;
-    private typeOfCarriage type;
+    private TypeOfCarriage type;
     private int id;
 
-    public railwayCarriage(int idCounter, typeOfCarriage type, float length, float width, float weight) {
+    public RailwayCarriage(int idCounter, TypeOfCarriage type, float length, float width, float weight) {
         if (length < 0 || width < 0 || weight < 0) {
             System.out.println("Input correct parametrs...");
         } else {
@@ -51,11 +51,11 @@ public class railwayCarriage {
         this.weight = weight;
     }
 
-    public typeOfCarriage getType() {
+    public TypeOfCarriage getType() {
         return type;
     }
 
-    public void setType(typeOfCarriage type) {
+    public void setType(TypeOfCarriage type) {
         this.type = type;
     }
 }

@@ -1,6 +1,6 @@
 package com.epam.railwayCarriage;
 
-public enum typeOfCarriage {
+public enum TypeOfCarriage {
     lUXE_CLASS,
     FIRST_CLASS,
     SECOND_CLASS,

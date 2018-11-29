@@ -1,6 +1,6 @@
 package com.epam.locomotive;
 
-public enum typeLocomotive {
+public enum TypeLocomotive {
     PASSENGERS_LOCOMOTIVE,
     FREIGHT_LOCOMOTIVE,
 }
